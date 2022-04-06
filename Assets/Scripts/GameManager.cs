@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using AppodealAds.Unity.Common;
-using AppodealAds.Unity.Api;
+//using AppodealAds.Unity.Common;
+//using AppodealAds.Unity.Api;
 
-public class GameManager : MonoBehaviour, IRewardedVideoAdListener
+public class GameManager : MonoBehaviour// IRewardedVideoAdListener
 {
 
 
@@ -49,43 +49,43 @@ public class GameManager : MonoBehaviour, IRewardedVideoAdListener
     void Awake()
     {
         //Обратный вызов
-        Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
-        string appKey = "2702ea8d0d4fe4af62345194dd9c6c70a6cb162def901868";
-        Appodeal.disableLocationPermissionCheck();
-        Appodeal.initialize(appKey, Appodeal.INTERSTITIAL | Appodeal.REWARDED_VIDEO);
-        Appodeal.setRewardedVideoCallbacks(this);
-        Appodeal.setTesting(false);
+        //Appodeal.confirm(Appodeal.SKIPPABLE_VIDEO);
+        //string appKey = "2702ea8d0d4fe4af62345194dd9c6c70a6cb162def901868";
+        //Appodeal.disableLocationPermissionCheck();
+       // Appodeal.initialize(appKey, Appodeal.INTERSTITIAL | Appodeal.REWARDED_VIDEO);
+        //Appodeal.setRewardedVideoCallbacks(this);
+        //Appodeal.setTesting(false);
     }
 
     public void StopBanner()
     {
-        Appodeal.hide(Appodeal.BANNER_BOTTOM);
-        Appodeal.hide(Appodeal.INTERSTITIAL);
+        //Appodeal.hide(Appodeal.BANNER_BOTTOM);
+        //Appodeal.hide(Appodeal.INTERSTITIAL);
     }
 
     public void StartCallBack()
     {
        //Проверка наличия интернета
-        if(Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))
-            Appodeal.show(Appodeal.REWARDED_VIDEO);
+       // if(Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))
+           // Appodeal.show(Appodeal.REWARDED_VIDEO);
     }
 
     public void StartInterstitial()
     {
-        if (Appodeal.isLoaded(Appodeal.INTERSTITIAL))
-            Appodeal.show(Appodeal.INTERSTITIAL);
+        //if (Appodeal.isLoaded(Appodeal.INTERSTITIAL))
+           // Appodeal.show(Appodeal.INTERSTITIAL);
     }
 
     public void StartSkippable()
     {
-        if (Appodeal.isLoaded(Appodeal.SKIPPABLE_VIDEO))
-            Appodeal.show(Appodeal.SKIPPABLE_VIDEO);
+        //if (Appodeal.isLoaded(Appodeal.SKIPPABLE_VIDEO))
+           // Appodeal.show(Appodeal.SKIPPABLE_VIDEO);
     }
 
     public void StartBanner()
     {
-        if (Appodeal.isLoaded(Appodeal.BANNER_BOTTOM))
-            Appodeal.show(Appodeal.BANNER_BOTTOM);
+        //if //(Appodeal.isLoaded(Appodeal.BANNER_BOTTOM))
+           // Appodeal.show(Appodeal.BANNER_BOTTOM);
     }
 
     void Start()
